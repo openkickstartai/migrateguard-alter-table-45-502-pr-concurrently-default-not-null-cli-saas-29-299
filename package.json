@@ -8,9 +8,9 @@
     "migrateguard": "dist/index.js"
   },
   "scripts": {
-    "build": "tsc --outDir dist --esModuleInterop --module commonjs --target es2020 --moduleResolution node --declaration --strict src/index.ts src/analyzer.ts",
+    "build": "tsc --outDir dist --esModuleInterop --module commonjs --target es2020 --moduleResolution node --declaration --strict src/index.ts src/analyzer.ts src/rules/index.ts src/rules/types.ts src/rules/lock-risk.ts src/rules/missing-concurrently.ts src/rules/not-null-without-default.ts src/rules/column-drop-safety.ts",
     "test": "vitest run",
-    "lint": "tsc --noEmit --esModuleInterop --module commonjs --target es2020 --moduleResolution node --strict src/index.ts src/analyzer.ts",
+    "lint": "tsc --noEmit --esModuleInterop --module commonjs --target es2020 --moduleResolution node --strict src/index.ts src/analyzer.ts src/rules/index.ts",
     "prepublishOnly": "npm run build"
   },
   "keywords": ["database", "migration", "safety", "postgresql", "ddl", "linter", "ci", "devops"],
