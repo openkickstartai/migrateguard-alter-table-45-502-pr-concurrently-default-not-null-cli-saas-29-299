@@ -1,0 +1,28 @@
+{
+  "name": "migrateguard",
+  "version": "1.0.0",
+  "description": "Database migration safety scanner — catch dangerous DDL before production",
+  "main": "dist/analyzer.js",
+  "types": "dist/analyzer.d.ts",
+  "bin": {
+    "migrateguard": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc --outDir dist --esModuleInterop --module commonjs --target es2020 --moduleResolution node --declaration --strict src/index.ts src/analyzer.ts",
+    "test": "vitest run",
+    "lint": "tsc --noEmit --esModuleInterop --module commonjs --target es2020 --moduleResolution node --strict src/index.ts src/analyzer.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["database", "migration", "safety", "postgresql", "ddl", "linter", "ci", "devops"],
+  "author": "MigrateGuard",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": ["dist"]
+}
